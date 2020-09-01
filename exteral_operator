@@ -1,0 +1,13 @@
+class BigQueryOperator_extend(BigQueryOperator):
+
+      @apply_defaults
+    def __init__(
+            self,
+            *args,
+            **kwargs):
+        super(BigQueryOperator_audit, self).__init__(*args, **kwargs)
+    def execute(self, context):
+      try:
+                BigQueryOperator.execute(self, context)
+       except Exception as e:
+       RaiseAirflowException
